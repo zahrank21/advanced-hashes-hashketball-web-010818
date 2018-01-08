@@ -169,12 +169,16 @@ def player_numbers(team_name)
 end
 
 
-# def player_stats(name)
-#   stats = players.find {|stat| stat.fetch(:player_name) == name}
-#   stats
-# end
 
 def player_stats(player_name)
- stats= players.find {|player| player.fetch(:player_name) == player_name}
+ stats = players.find {|player| player.fetch(:player_name) == player_name}
   stats.delete_if {|info, string| info == :player_name}
 end
+
+def biggest_shoe
+  players.max_by {|player_shoe| player_shoe.fetch(:shoe)}
+end 
+
+def big_shoe_rebounds
+  biggest_shoe.fetch(:rebounds)
+end 
