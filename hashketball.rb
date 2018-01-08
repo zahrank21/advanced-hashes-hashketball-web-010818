@@ -177,7 +177,7 @@ end
 
 def biggest_shoe
   players.max_by {|player_shoe| player_shoe.fetch(:shoe)}
-end 
+end
 
 def big_shoe_rebounds
   biggest_shoe.fetch(:rebounds)
